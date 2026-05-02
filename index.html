@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo Hair Studio — Ankara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+ 
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">Solo Hair Studio</div>
+      <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+ 
+  <!-- NOISE OVERLAY -->
+  <canvas class="noise" id="noiseCanvas"></canvas>
+ 
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-main">SOLO</span>
+      <span class="nav-logo-sub">HAIR STUDIO</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü">
+      <span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link" data-text="Ana Sayfa">Ana Sayfa</a></li>
+      <li><a href="#about" class="nav-link" data-text="Hakkımızda">Hakkımızda</a></li>
+      <li><a href="#services" class="nav-link" data-text="Hizmetler">Hizmetler</a></li>
+      <li><a href="#gallery" class="nav-link" data-text="Galeri">Galeri</a></li>
+      <li><a href="#contact" class="nav-link nav-link--cta" data-text="İletişim">İletişim</a></li>
+    </ul>
+  </nav>
+ 
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <!-- Fotoğraf: images/hero.jpg olarak kaydedin -->
+      <img src="images/hero.jpg" alt="Solo Hair Studio" class="hero-img" id="heroImg" />
+      <div class="hero-overlay"></div>
+    </div>
+ 
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-reveal>
+        <span class="hero-eyebrow-line"></span>
+        Ankara'nın Premium Saç Stüdyosu
+        <span class="hero-eyebrow-line"></span>
+      </div>
+      <h1 class="hero-title" data-reveal>
+        <span class="hero-title-line">Saçınız,</span>
+        <span class="hero-title-line hero-title-italic">Kimliğiniz.</span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        Yaşamkent'in kalbinde, uzman ellerin dokunuşuyla<br>güzelliğinizi yeniden keşfedin.
+      </p>
+      <div class="hero-actions" data-reveal>
+        <a href="https://wa.me/905307061509?text=Merhaba,%20randevu%20almak%20istiyorum." class="btn btn--whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.862L.054 23.268a.5.5 0 0 0 .609.63l5.603-1.47A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.523-5.204-1.433l-.373-.22-3.865 1.015 1.037-3.788-.242-.39A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp ile Yaz
+        </a>
+        <a href="#gallery" class="btn btn--ghost">
+          Çalışmalarımız
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+ 
+    <div class="hero-scroll" id="heroScroll">
+      <span>Kaydır</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+ 
+    <div class="hero-badge">
+      <div class="hero-badge-inner">
+        <div class="hero-badge-text">★ 4.9 Google Puanı ★ Yaşamkent ★ Ankara ★</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track marquee-track--1">
+      <div class="marquee-content">
+        <span>Saç Kesimi</span><span class="marquee-dot">◆</span>
+        <span>Balayaj</span><span class="marquee-dot">◆</span>
+        <span>Ombre</span><span class="marquee-dot">◆</span>
+        <span>Keratin</span><span class="marquee-dot">◆</span>
+        <span>Saç Boyama</span><span class="marquee-dot">◆</span>
+        <span>Gelin Saçı</span><span class="marquee-dot">◆</span>
+        <span>Saç Bakımı</span><span class="marquee-dot">◆</span>
+        <span>Saç Kesimi</span><span class="marquee-dot">◆</span>
+        <span>Balayaj</span><span class="marquee-dot">◆</span>
+        <span>Ombre</span><span class="marquee-dot">◆</span>
+        <span>Keratin</span><span class="marquee-dot">◆</span>
+        <span>Saç Boyama</span><span class="marquee-dot">◆</span>
+        <span>Gelin Saçı</span><span class="marquee-dot">◆</span>
+        <span>Saç Bakımı</span><span class="marquee-dot">◆</span>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-media">
+          <div class="about-img-wrap">
+            <!-- Fotoğraf: images/about.jpg -->
+            <img src="images/about.jpg" alt="Solo Hair Studio iç mekan" class="about-img" />
+            <div class="about-img-frame"></div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat">
+              <div class="about-stat-num" data-count="8">0</div>
+              <div class="about-stat-label">Yıl Deneyim</div>
+            </div>
+            <div class="about-stat-divider"></div>
+            <div class="about-stat">
+              <div class="about-stat-num" data-count="2000">0</div>
+              <div class="about-stat-label">Mutlu Müşteri</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-tag" data-reveal>— Hakkımızda</div>
+          <h2 class="section-title" data-reveal>
+            Saçı Sanata<br><em>Dönüştürüyoruz</em>
+          </h2>
+          <p class="about-text" data-reveal>
+            Solo Hair Studio olarak, sadece saç kesmiyoruz. Her müşterimizin benzersiz kişiliğini, yaşam tarzını ve hayallerini dinleyerek kişiye özel bir imaj yaratıyoruz.
+          </p>
+          <p class="about-text" data-reveal>
+            Yaşamkent'teki modern stüdyomuzda, premium ürünler ve deneyimli ekibimizle size unutulmaz bir deneyim sunuyoruz.
+          </p>
+          <div class="about-features" data-reveal>
+            <div class="about-feature">
+              <div class="about-feature-icon">✦</div>
+              <div class="about-feature-text">Premium Ürünler</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">✦</div>
+              <div class="about-feature-text">Kişisel Danışmanlık</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">✦</div>
+              <div class="about-feature-text">Uzman Ekip</div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">✦</div>
+              <div class="about-feature-text">Modern Teknikler</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-bg-text">SOLO</div>
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">— Hizmetler</div>
+        <h2 class="section-title">Ne Sunuyoruz</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">01</div>
+          <div class="service-card-icon">✂</div>
+          <h3 class="service-card-title">Kesim &amp; Şekillendirme</h3>
+          <p class="service-card-desc">Yüz hatlarınıza özel, uzman ellerin dokunuşuyla kişiselleştirilmiş kesim deneyimi.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">02</div>
+          <div class="service-card-icon">◈</div>
+          <h3 class="service-card-title">Balayaj &amp; Ombre</h3>
+          <p class="service-card-desc">Doğal geçişlerle oluşturulan, güneşte yanmış saç efekti. Her ten rengine özel renk skalası.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">03</div>
+          <div class="service-card-icon">◉</div>
+          <h3 class="service-card-title">Keratin Tedavisi</h3>
+          <p class="service-card-desc">Saçı derinlemesine onaran, düzleştiren ve uzun süre etki gösteren profesyonel bakım.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">04</div>
+          <div class="service-card-icon">♛</div>
+          <h3 class="service-card-title">Gelin &amp; Özel Gün</h3>
+          <p class="service-card-desc">Hayatınızın en özel günlerine özel tasarım. Deneme seansı dahil kapsamlı paket.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">05</div>
+          <div class="service-card-icon">◇</div>
+          <h3 class="service-card-title">Saç Boyama</h3>
+          <p class="service-card-desc">Profesyonel renk analizi ve dünyaca ünlü markalarla kişiye özel boyama hizmetleri.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-card-num">06</div>
+          <div class="service-card-icon">✧</div>
+          <h3 class="service-card-title">Saç Bakım Ritueli</h3>
+          <p class="service-card-desc">Protein, nem ve onarım tedavileriyle saçlarınızı derinlemesine besleyen özel bakım seansları.</p>
+          <div class="service-card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">— Galeri</div>
+        <h2 class="section-title">Çalışmalarımız</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <!-- Fotoğraflarınızı images/ klasörüne koyun: gallery-1.jpg ... gallery-5.jpg -->
+      <div class="gallery-item gallery-item--tall" data-reveal>
+        <img src="images/gallery-1.jpg" alt="Saç çalışması 1" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-label">Balayaj</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-reveal>
+        <img src="images/gallery-2.jpg" alt="Saç çalışması 2" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-label">Kesim</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-reveal>
+        <img src="images/gallery-3.jpg" alt="Saç çalışması 3" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-label">Boyama</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-reveal>
+        <img src="images/gallery-4.jpg" alt="Saç çalışması 4" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-label">Ombre</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-reveal>
+        <img src="images/gallery-5.jpg" alt="Saç çalışması 5" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <span class="gallery-item-label">Gelin Saçı</span>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-tag" data-reveal>— İletişim</div>
+          <h2 class="section-title" data-reveal>
+            Bize<br><em>Ulaşın</em>
+          </h2>
+          <p class="contact-desc" data-reveal>
+            WhatsApp'tan yazın, Instagram'da bizi takip edin ya da haritadan bize kolayca ulaşın.
+          </p>
+ 
+          <div class="contact-buttons" data-reveal>
+            <a href="https://wa.me/905307061509?text=Merhaba,%20Solo%20Hair%20Studio%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+               class="contact-btn contact-btn--wa" target="_blank" rel="noopener">
+              <div class="contact-btn-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.862L.054 23.268a.5.5 0 0 0 .609.63l5.603-1.47A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.523-5.204-1.433l-.373-.22-3.865 1.015 1.037-3.788-.242-.39A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              </div>
+              <div class="contact-btn-text">
+                <div class="contact-btn-label">WhatsApp</div>
+                <div class="contact-btn-val">+90 530 706 15 09</div>
+              </div>
+              <div class="contact-btn-arrow">↗</div>
+            </a>
+ 
+            <a href="https://instagram.com/solohairankara" class="contact-btn contact-btn--ig" target="_blank" rel="noopener">
+              <div class="contact-btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </div>
+              <div class="contact-btn-text">
+                <div class="contact-btn-label">Instagram</div>
+                <div class="contact-btn-val">@solohairankara</div>
+              </div>
+              <div class="contact-btn-arrow">↗</div>
+            </a>
+ 
+            <a href="https://maps.google.com/?q=Yaşamkent,+3061.+Cd.+No:51,+06810+Çankaya/Ankara"
+               class="contact-btn contact-btn--map" target="_blank" rel="noopener">
+              <div class="contact-btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              </div>
+              <div class="contact-btn-text">
+                <div class="contact-btn-label">Konum</div>
+                <div class="contact-btn-val">Yaşamkent, Ankara</div>
+              </div>
+              <div class="contact-btn-arrow">↗</div>
+            </a>
+          </div>
+ 
+          <div class="contact-hours" data-reveal>
+            <div class="contact-hours-title">Çalışma Saatleri</div>
+            <div class="contact-hours-row">
+              <span>Pazartesi – Cumartesi</span>
+              <span>09:00 – 20:00</span>
+            </div>
+            <div class="contact-hours-row">
+              <span>Pazar</span>
+              <span>Kapalı</span>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="contact-map" data-reveal>
+          <div class="contact-map-inner">
+            <iframe
+              src="https://maps.google.com/maps?q=Yaşamkent+3061+Cd+No+51+Çankaya+Ankara&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Solo Hair Studio Konum">
+            </iframe>
+          </div>
+          <div class="contact-map-card">
+            <div class="contact-map-card-icon">📍</div>
+            <div>
+              <div class="contact-map-card-title">Solo Hair Studio</div>
+              <div class="contact-map-card-addr">Yaşamkent, 3061. Cd. No:51<br>Çankaya / Ankara</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="footer-logo-main">SOLO HAIR STUDIO</div>
+          <div class="footer-logo-sub">Ankara · Yaşamkent</div>
+        </div>
+        <div class="footer-links">
+          <a href="#hero">Ana Sayfa</a>
+          <a href="#about">Hakkımızda</a>
+          <a href="#services">Hizmetler</a>
+          <a href="#gallery">Galeri</a>
+          <a href="#contact">İletişim</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/905307061509" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.862L.054 23.268a.5.5 0 0 0 .609.63l5.603-1.47A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.523-5.204-1.433l-.373-.22-3.865 1.015 1.037-3.788-.242-.39A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+          <a href="https://instagram.com/solohairankara" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Solo Hair Studio. Tüm hakları saklıdır.
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- FLOATING WA BUTTON -->
+  <a href="https://wa.me/905307061509?text=Merhaba,%20Solo%20Hair%20Studio%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+     class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp ile iletişim" id="waFloat">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.862L.054 23.268a.5.5 0 0 0 .609.63l5.603-1.47A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.523-5.204-1.433l-.373-.22-3.865 1.015 1.037-3.788-.242-.39A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    <span class="wa-float-pulse"></span>
+  </a>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
