@@ -62,19 +62,29 @@
   const nav = document.getElementById('nav');
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+
   if (nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',window.scrollY>60); },{passive:true});
-  if (toggle&&links){
-    toggle.addEventListener('click',()=>{
-      const open = links.classList.toggle('open');
-      toggle.classList.toggle('open',open);
-      // Menü açıkken body scroll'u engelle
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+
+  if (toggle && links) {
+    // Toggle'ı body'e taşı — nav'ın stacking context'inden çıkar
+    document.body.appendChild(toggle);
+
+    const closeMenu = () => {
       links.classList.remove('open');
       toggle.classList.remove('open');
       document.body.style.overflow = '';
-    }));
+    };
+
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // ESC ile kapat
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   }
 })();
 
