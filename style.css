@@ -53,13 +53,15 @@ ul { list-style:none; }
   height: 90px;
   width: auto;
   object-fit: contain;
-  filter: invert(1) sepia(1) saturate(0) brightness(2);
+  /* mix-blend-mode: lighten — siyah pikselleri şeffaf gibi gösterir */
+  mix-blend-mode: lighten;
+  filter: brightness(1.1);
   transition: filter .3s, transform .3s var(--ease), height .4s var(--ease);
   display: block;
 }
 .nav.scrolled .nav-logo-img { height: 64px; }
 .nav-logo:hover .nav-logo-img {
-  filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.4);
+  filter: brightness(1.3) sepia(0.3) saturate(1.5);
   transform: scale(1.03);
 }
 
@@ -442,7 +444,7 @@ ul { list-style:none; }
   :root { --gutter:24px; }
   .cursor, .cursor-follower { display:none; }
   body { cursor:auto; }
-  .nav-toggle { display:flex; position:relative; z-index:700; }
+  .nav-toggle { display:flex; position:fixed; top:20px; right:24px; z-index:800; background:none; border:none; cursor:pointer; padding:8px; }
   /* Hamburger menü — scroll pozisyonundan bağımsız, tam ekran overlay */
   .nav-links {
     position:fixed;
@@ -455,12 +457,12 @@ ul { list-style:none; }
     gap:36px;
     transform:translateX(100%);
     transition:transform .5s var(--ease);
-    z-index:650;
+    z-index:750;
     overflow-y:auto;
   }
   .nav-links.open { transform:translateX(0); }
   .nav-link { font-size:14px; letter-spacing:.25em; }
-  .nav-logo-img { height: 60px; }
+  .nav-logo-img { height: 60px; mix-blend-mode: lighten; }
   .nav.scrolled .nav-logo-img { height: 48px; }
   .hero-content { padding:0 var(--gutter); max-width:100%; }
   .hero-sub { font-size:14px; }
