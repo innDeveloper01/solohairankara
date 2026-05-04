@@ -72,14 +72,13 @@
   }
 })();
 
-/* HERO SLIDER (auto + dots) */
+/* HERO SLIDER */
 (function(){
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
   if (!slides.length) return;
   let current = 0;
   let timer;
-
   const goTo = (idx) => {
     slides[current].classList.remove('active');
     dots[current]?.classList.remove('active');
@@ -87,14 +86,11 @@
     slides[current].classList.add('active');
     dots[current]?.classList.add('active');
   };
-
   const start = () => { timer = setInterval(()=>goTo(current+1), 5000); };
   const reset = () => { clearInterval(timer); start(); };
-
   dots.forEach(dot => {
     dot.addEventListener('click', ()=>{ goTo(parseInt(dot.dataset.idx)); reset(); });
   });
-
   start();
 })();
 
@@ -139,6 +135,33 @@
   });
 })();
 
+/* PRICING TABS */
+(function(){
+  const tabs = document.querySelectorAll('.pricing-tab');
+  const cards = document.querySelectorAll('.pricing-card');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const cat = tab.dataset.cat;
+      cards.forEach(card => {
+        if (cat === 'tum') {
+          card.classList.remove('hidden-cat');
+        } else {
+          if (card.dataset.cat === cat) {
+            card.classList.remove('hidden-cat');
+          } else {
+            card.classList.add('hidden-cat');
+          }
+        }
+      });
+    });
+  });
+})();
+
 /* GALLERY SLIDER */
 (function(){
   const slider = document.getElementById('gallerySlider');
@@ -149,7 +172,7 @@
   if (!slider) return;
 
   const slides = slider.querySelectorAll('.gallery-slide');
-  const total = 3; // gerçek fotoğraf sayısı (tekrarsız)
+  const total = 3;
   let current = 0;
   let autoTimer;
   let startX = 0;
@@ -174,14 +197,12 @@
 
   const next = () => { current = (current + 1) % slides.length; update(); };
   const prev = () => { current = (current - 1 + slides.length) % slides.length; update(); };
-
   const startAuto = () => { autoTimer = setInterval(next, 4000); };
   const resetAuto = () => { clearInterval(autoTimer); startAuto(); };
 
   if (nextBtn) nextBtn.addEventListener('click', ()=>{ next(); resetAuto(); });
   if (prevBtn) prevBtn.addEventListener('click', ()=>{ prev(); resetAuto(); });
 
-  // Touch/drag
   slider.addEventListener('mousedown', e=>{ isDragging=true; startX=e.clientX; slider.style.transition='none'; });
   slider.addEventListener('touchstart', e=>{ isDragging=true; startX=e.touches[0].clientX; slider.style.transition='none'; },{passive:true});
   const endDrag = (endX) => {
@@ -195,7 +216,6 @@
   slider.addEventListener('touchend', e=>endDrag(e.changedTouches[0].clientX));
   slider.addEventListener('mouseleave', e=>{ if(isDragging){ isDragging=false; update(); } });
 
-  // Keyboard
   document.addEventListener('keydown', e=>{
     if (e.key==='ArrowRight') { next(); resetAuto(); }
     if (e.key==='ArrowLeft')  { prev(); resetAuto(); }
@@ -203,8 +223,6 @@
 
   update(false);
   startAuto();
-
-  // Recalc on resize
   window.addEventListener('resize', ()=>update(false));
 })();
 
