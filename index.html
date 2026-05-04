@@ -26,8 +26,7 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">
-      <span class="nav-logo-main">SOLO</span>
-      <span class="nav-logo-sub">HAIR STUDIO</span>
+      <img src="solo-logo.jpeg" alt="Solo Hair Studio Logo" class="nav-logo-img" />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menü">
       <span></span><span></span>
@@ -36,6 +35,7 @@
       <li><a href="#hero" class="nav-link">Ana Sayfa</a></li>
       <li><a href="#about" class="nav-link">Hakkımızda</a></li>
       <li><a href="#services" class="nav-link">Hizmetler</a></li>
+      <li><a href="#pricing" class="nav-link">Fiyatlar</a></li>
       <li><a href="#gallery" class="nav-link">Galeri</a></li>
       <li><a href="#contact" class="nav-link nav-link--cta">İletişim</a></li>
     </ul>
@@ -145,7 +145,7 @@
         <div class="about-content">
           <div class="section-tag" data-reveal>— Hakkımızda</div>
           <h2 class="section-title" data-reveal>Saçı Sanata<br><em>Dönüştürüyoruz</em></h2>
-          <p class="about-text" data-reveal>Solo Hair Studio olarak, sadece saç kesmiyoruz. Her müşterimizin benzersiz kişiliğini, yaşam tarzını ve hayallerini dinleyerek kişiye özel bir imaj yaratıyoruz.</p>
+          <p class="about-text about-text--tagline" data-reveal>Solo Hair; saçın sadece bir görünüm değil tarzının en güçlü yansıması olduğuna inanır, her misafirine özel analizle kesimden renklendirmeye, bakım ve şekillendirmeye kadar tüm süreçleri profesyonel dokunuşlarla planlayarak doğal, sağlıklı ve uzun süre kalıcı sonuçlar sunar; kalite, özen ve estetiği bir araya getirerek her zaman en iyi versiyonunu ortaya çıkarır.</p>
           <p class="about-text" data-reveal>Yaşamkent'teki modern stüdyomuzda, premium ürünler ve deneyimli ekibimizle size unutulmaz bir deneyim sunuyoruz.</p>
           <div class="about-features" data-reveal>
             <div class="about-feature"><div class="about-feature-icon">✦</div><div class="about-feature-text">Premium Ürünler</div></div>
@@ -286,6 +286,120 @@
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-bg-text">FİYAT</div>
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <div class="section-tag">— Fiyat Listesi</div>
+        <h2 class="section-title">Hizmet <em>Ücretleri</em></h2>
+        <p class="pricing-note">Fiyatlar saç uzunluğuna ve yoğunluğuna göre değişiklik gösterebilir.</p>
+      </div>
+
+      <div class="pricing-tabs" id="pricingTabs">
+        <button class="pricing-tab active" data-cat="tum">Tümü</button>
+        <button class="pricing-tab" data-cat="boyama">Boyama</button>
+        <button class="pricing-tab" data-cat="bakim">Bakım</button>
+        <button class="pricing-tab" data-cat="sekil">Şekillendirme</button>
+        <button class="pricing-tab" data-cat="ozel">Özel</button>
+      </div>
+
+      <div class="pricing-grid" id="pricingGrid">
+
+        <!-- BOYAMA -->
+        <div class="pricing-card" data-cat="boyama" data-reveal>
+          <div class="pricing-card-cat">Boyama</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Dip Boya</span><span class="pricing-price">2.500 – 3.500 ₺</span></div>
+            <div class="pricing-row"><span>Komple Boya</span><span class="pricing-price">4.000 – 5.000 ₺</span></div>
+            <div class="pricing-row"><span>Tüm Saç Açma &amp; Boyama</span><span class="pricing-price">7.000 – 10.000 ₺</span></div>
+            <div class="pricing-row"><span>Dip Açma Boyama</span><span class="pricing-price">5.000 – 7.000 ₺</span></div>
+            <div class="pricing-row"><span>Transparan Boyama</span><span class="pricing-price">2.000 – 3.500 ₺</span></div>
+            <div class="pricing-row"><span>Pigmentasyon</span><span class="pricing-price">2.000 ₺</span></div>
+            <div class="pricing-row"><span>Cila</span><span class="pricing-price">1.700 ₺</span></div>
+            <div class="pricing-row"><span>Renklendirme</span><span class="pricing-price">6.000 – 9.000 ₺</span></div>
+          </div>
+        </div>
+
+        <!-- ÖZEL TEKNİKLER -->
+        <div class="pricing-card" data-cat="boyama" data-reveal>
+          <div class="pricing-card-cat">Özel Teknikler</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Air Touch</span><span class="pricing-price">8.000 ₺</span></div>
+            <div class="pricing-row"><span>Free Light</span><span class="pricing-price">7.000 ₺</span></div>
+            <div class="pricing-row"><span>Full Paket Sarışınlık</span><span class="pricing-price">9.000 ₺</span></div>
+            <div class="pricing-row"><span>10'lu – 15'li Paket</span><span class="pricing-price">5.000 ₺</span></div>
+            <div class="pricing-row"><span>Mikro Kaynak</span><span class="pricing-price">120 – 170 ₺/adet</span></div>
+          </div>
+        </div>
+
+        <!-- BAKIM -->
+        <div class="pricing-card" data-cat="bakim" data-reveal>
+          <div class="pricing-card-cat">Bakım</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Kolajen Bakımı</span><span class="pricing-price">3.500 ₺</span></div>
+            <div class="pricing-row"><span>Nem Bakımı</span><span class="pricing-price">2.500 ₺</span></div>
+            <div class="pricing-row"><span>Sidra Yoğun Onarım Bakımı</span><span class="pricing-price">3.500 ₺</span></div>
+          </div>
+        </div>
+
+        <!-- KERATİN -->
+        <div class="pricing-card" data-cat="bakim" data-reveal>
+          <div class="pricing-card-cat">Keratin</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Düzleştirici Keratin</span><span class="pricing-price">5.000 – 7.000 ₺</span></div>
+            <div class="pricing-row"><span>Sakinleştirici Keratin</span><span class="pricing-price">3.500 ₺</span></div>
+          </div>
+        </div>
+
+        <!-- ŞEKİLLENDİRME -->
+        <div class="pricing-card" data-cat="sekil" data-reveal>
+          <div class="pricing-card-cat">Şekillendirme</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Fön — Düz</span><span class="pricing-price">500 ₺</span></div>
+            <div class="pricing-row"><span>Fön — Dalgalı</span><span class="pricing-price">650 ₺</span></div>
+            <div class="pricing-row"><span>Maşa</span><span class="pricing-price">800 ₺</span></div>
+            <div class="pricing-row"><span>Topuz</span><span class="pricing-price">1.500 ₺</span></div>
+            <div class="pricing-row"><span>Yıkama</span><span class="pricing-price">200 ₺</span></div>
+          </div>
+        </div>
+
+        <!-- KESİM -->
+        <div class="pricing-card" data-cat="sekil" data-reveal>
+          <div class="pricing-card-cat">Kesim</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row"><span>Saç Kesimi</span><span class="pricing-price">2.000 ₺</span></div>
+          </div>
+        </div>
+
+        <!-- ÖZEL GÜN -->
+        <div class="pricing-card pricing-card--highlight" data-cat="ozel" data-reveal>
+          <div class="pricing-card-cat">Özel Gün</div>
+          <div class="pricing-card-body">
+            <div class="pricing-row">
+              <span>Gelin Başı <small>(Salon içi)</small></span>
+              <span class="pricing-price">10.000 ₺</span>
+            </div>
+            <div class="pricing-row">
+              <span>Gelin Başı <small>(Salon dışı)</small></span>
+              <span class="pricing-price">20.000 ₺</span>
+            </div>
+          </div>
+          <div class="pricing-card-note">★ Deneme seansı dahil</div>
+        </div>
+
+      </div>
+
+      <div class="pricing-cta" data-reveal>
+        <p>Fiyat hakkında daha fazla bilgi almak için bize ulaşın</p>
+        <a href="https://wa.me/905307061509?text=Merhaba,%20fiyat%20listesi%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn--whatsapp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.862L.054 23.268a.5.5 0 0 0 .609.63l5.603-1.47A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.523-5.204-1.433l-.373-.22-3.865 1.015 1.037-3.788-.242-.39A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Fiyat Bilgisi Al
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- GALLERY SLIDER -->
   <section class="gallery" id="gallery">
     <div class="container">
@@ -315,7 +429,6 @@
             <span class="gallery-slide-label">Premium Hizmet</span>
           </div>
         </div>
-        <!-- Tekrar baştan -->
         <div class="gallery-slide">
           <img src="solohair1.jpeg" alt="Solo Hair Studio" />
           <div class="gallery-slide-overlay">
@@ -420,6 +533,7 @@
           <a href="#hero">Ana Sayfa</a>
           <a href="#about">Hakkımızda</a>
           <a href="#services">Hizmetler</a>
+          <a href="#pricing">Fiyatlar</a>
           <a href="#gallery">Galeri</a>
           <a href="#contact">İletişim</a>
         </div>
