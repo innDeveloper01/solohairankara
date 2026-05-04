@@ -44,7 +44,7 @@ ul { list-style:none; }
 @keyframes fadeIn { to { opacity:1; } }
 
 /* NAV */
-.nav { position:fixed; top:0; left:0; right:0; z-index:600; display:flex; align-items:center; justify-content:space-between; padding:24px var(--gutter); transition:padding .4s var(--ease), background .4s; }
+.nav { position:fixed; top:0; left:0; right:0; z-index:600; display:flex; align-items:center; justify-content:space-between; padding:24px var(--gutter); transition:padding .4s var(--ease), background .5s, backdrop-filter .5s, border-color .5s; background: transparent; border-bottom: 1px solid transparent; }
 .nav.scrolled { padding:14px var(--gutter); background:rgba(8,8,7,.96); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
 
 /* LOGO IMAGE */
