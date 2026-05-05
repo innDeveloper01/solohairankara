@@ -56,8 +56,6 @@ ul { list-style:none; }
   display: block;
   transition: opacity .3s, transform .3s var(--ease), height .4s var(--ease);
   opacity: 0.92;
-  /* Koyu logoyu beyaza çevir */
-  filter: brightness(0) invert(1);
 }
 .nav.scrolled .nav-logo-img { height: 58px; }
 .nav-logo:hover .nav-logo-img { opacity: 1; transform: scale(1.03); }
