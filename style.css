@@ -56,6 +56,8 @@ ul { list-style:none; }
   display: block;
   transition: opacity .3s, transform .3s var(--ease), height .4s var(--ease);
   opacity: 0.92;
+  /* Koyu logoyu beyaza çevir */
+  filter: brightness(0) invert(1);
 }
 .nav.scrolled .nav-logo-img { height: 58px; }
 .nav-logo:hover .nav-logo-img { opacity: 1; transform: scale(1.03); }
@@ -92,7 +94,6 @@ ul { list-style:none; }
   line-height:1.3;
   margin-bottom:24px;
   overflow:visible;
-  /* Alt descender'ların (ğ, g, p gibi) kesilmemesi için */
   padding-bottom:20px;
 }
 .hero-title-line {
@@ -101,7 +102,6 @@ ul { list-style:none; }
   transform:translateY(60px);
   animation:revUp .9s var(--ease) forwards;
   overflow:visible;
-  /* clip yok */
   clip:auto;
 }
 .hero-title-line:nth-child(1) { animation-delay:2.0s; }
@@ -327,7 +327,6 @@ ul { list-style:none; }
   text-transform: uppercase;
   color: var(--gold);
 }
-/* Özel gün kartı — tam genişlik */
 .pricing-card--full {
   grid-column: 1 / -1;
 }
@@ -440,7 +439,19 @@ ul { list-style:none; }
   .cursor, .cursor-follower { display:none; }
   body { cursor:auto; }
   .nav-toggle { display:flex; position:fixed; top:20px; right:24px; z-index:800; background:none; border:none; cursor:pointer; padding:8px; }
-  /* Hamburger menü — scroll pozisyonundan bağımsız, tam ekran overlay */
+
+  /* ======== MOBİL MENÜ FIX ======== */
+  /* Menü açıkken nav'ın backdrop-filter'ı kaldır —
+     backdrop-filter yeni bir containing block oluşturur ve
+     nav-links'in position:fixed'ını kırar */
+  .nav.menu-open {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: transparent !important;
+    border-bottom-color: transparent !important;
+  }
+
+  /* Hamburger menü — tam ekran overlay */
   .nav-links {
     position:fixed;
     top:0; left:0; right:0; bottom:0;
@@ -464,7 +475,6 @@ ul { list-style:none; }
   .hero-tagline { font-size:12px; display:none; }
   .hero-badge { right:var(--gutter); }
   .hero-scroll { display:none; }
-  /* Mobil butonlar — tam genişlik, hizalı */
   .hero-actions { flex-direction:column; align-items:stretch; gap:12px; width:100%; max-width:340px; }
   .btn { font-size:11px; padding:15px 20px; cursor:auto; justify-content:center; width:100%; }
   .about { padding:80px 0; }
