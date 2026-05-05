@@ -72,15 +72,32 @@
     const closeMenu = () => {
       links.classList.remove('open');
       toggle.classList.remove('open');
-      nav.classList.remove('menu-open');
       document.body.style.overflow = '';
+      // backdrop-filter'ı animasyon bittikten sonra geri yükle
+      setTimeout(() => {
+        if (!links.classList.contains('open')) {
+          nav.classList.remove('menu-open');
+        }
+      }, 500);
     };
 
     toggle.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      nav.classList.toggle('menu-open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      const willOpen = !links.classList.contains('open');
+      toggle.classList.toggle('open', willOpen);
+
+      if (willOpen) {
+        // Önce backdrop-filter'ı kaldır (containing block düzeltmesi)
+        nav.classList.add('menu-open');
+        // Sonra bir sonraki frame'de slide animasyonunu başlat
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            links.classList.add('open');
+          });
+        });
+        document.body.style.overflow = 'hidden';
+      } else {
+        closeMenu();
+      }
     });
 
     links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
