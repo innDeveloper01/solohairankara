@@ -72,12 +72,14 @@
     const closeMenu = () => {
       links.classList.remove('open');
       toggle.classList.remove('open');
+      nav.classList.remove('menu-open');
       document.body.style.overflow = '';
     };
 
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.classList.toggle('open', open);
+      nav.classList.toggle('menu-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
